@@ -25,13 +25,15 @@
 				<p>
 					{textTop}
 					<a
+						data-sveltekit-reload 
 						class="download"
 						download={textTop.split("/").pop()}
 						href={download}>(Download)</a
-					> <a href="././" class="download">(../)</a>
-					<a href="/" class="download">(/)</a>
+					> <a data-sveltekit-reload  href="././" class="download">(../)</a>
+					<a data-sveltekit-reload  href="/" class="download">(/)</a>
 					{#if turbowarp}
 						<a
+							data-sveltekit-reload 
 							class="download"
 							href="https://turbowarp.org/editor?project_url={download}"
 							>(TurboWarp)</a
@@ -42,8 +44,8 @@
 			<slot />
 			<div class="banner-text">
 				{textBottom}
-				<a href="https://tdgmdev.net/" class="download">(Home)</a>
-				<a href="#" class="download" on:click={changeTheme}
+				<a data-sveltekit-reload  href="https://tdgmdev.net/" class="download">(Home)</a>
+				<a data-sveltekit-reload  href="#" class="download" on:click={changeTheme}
 					>(Change theme)</a
 				>
 			</div>

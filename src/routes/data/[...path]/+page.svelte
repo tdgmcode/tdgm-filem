@@ -35,13 +35,14 @@
 				{#each contents as content}
 					<tr>
 						<td
-							><a href="{$page.url.pathname}/{content.link}"
+							><a data-sveltekit-reload href="{$page.url.pathname}/{content.link}"
 								>{content.name}</a
 							></td
 						>
 						<td><span>{content.mtime}</td>
 						<td
 							><a
+								data-sveltekit-reload 
 								href="/api/file/{content.dir}"
 								download={!content.extension ? `${currPath.split('/').pop()}.zip` : content.name}>Download</a
 							></td
@@ -49,6 +50,7 @@
 						{#if content.extension == "sjson" || content.extension == "sb3"}
 							<td
 								><a
+									data-sveltekit-reload 
 									href="https://turbowarp.org/editor?project_url=https://files.tdgmdev.net/api/file/{content.dir}"
 									download={content.name}>TurboWarp</a
 								></td
