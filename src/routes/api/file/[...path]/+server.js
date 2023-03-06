@@ -62,8 +62,12 @@ export async function GET({ params }) {
 			});
 		}
 
-		return new Response(fs.readFileSync(zipDir));
+		let response = new Response(fs.readFileSync(zipDir));
+		response.headers.append('Access-Control-Allow-Origin', '*');
+		return response;
 	} else {
-		return new Response(fs.readFileSync(currDirectory));
+		let response = new Response(fs.readFileSync(currDirectory));
+		response.headers.append('Access-Control-Allow-Origin', '*');
+		return response;
 	}
 }
