@@ -86,13 +86,11 @@ export async function load({ params, url }) {
 		date = fs.statSync(currDirectory).mtime;
 
 		return {
-			body: {
-				path, contents, raw: true, currPath: '/api/file/' + params.path,
-				width: width, height: height + "px",
-				extension: extension,
-				date: date + "",
-				isDark: isDark
-			}
+			path, contents, raw: true, currPath: '/api/file/' + params.path,
+			width: width, height: height + "px",
+			extension: extension,
+			date: date + "",
+			isDark: isDark
 		};
 	}
 
